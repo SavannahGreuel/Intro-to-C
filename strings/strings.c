@@ -8,8 +8,14 @@
     Do not just use the `strlen` function from the standard libary.
 */
 int string_length(char *s)
+// go through until finding \0 (end of string)
 {
-
+    int length = 0;
+    while (s[length] != '\0'){
+        length++;
+    }
+    return length;
+    
 }
 
 /*
@@ -20,6 +26,21 @@ int string_length(char *s)
 */
 char *reverse_string(char *rv, char *s)
 {
+    // lengtt of string
+    int length = string_length(s) - 1;
+    int start = 0;
+    
+
+// while loop goes backwards through rv, the start will go forwards on s and assign value to rv
+    for(int i = length; i >=0; i--){
+        rv[start] = s[i];
+        start++;
+    }
+
+    // makes the last value a 0
+    rv[start] = 0;
+    
+    return rv;
 
 }
 
