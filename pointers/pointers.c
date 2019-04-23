@@ -15,7 +15,10 @@
 */
 void string_copy(char *x, char *y)
 {
-
+    if ( x == '\0')
+    {
+        x = y;
+    }
 }
 
 /*
@@ -28,7 +31,13 @@ void string_copy(char *x, char *y)
 */
 char *find_char(char *str, int c)
 {
-
+    while (*str != '\0'){
+        if (*str == c) {
+            return  str;
+        }
+        str++;
+    }
+    return 0;
 }
 
 /*
@@ -41,6 +50,25 @@ char *find_char(char *str, int c)
 */
 char *find_string(char *haystack, char *needle)
 {
+    char *pointer;
+
+    while (*haystack != '\0') {
+        pointer = haystack;
+        if (*pointer = *needle){
+            while (*needle != '\0') {
+                if (*pointer != needle) {
+                    break
+                }
+                pointer++;
+                needle++;
+                if(*needle == '\0') {
+                    return haystack;
+                }
+            }
+        }
+        haystack++;
+    }
+    return NULL
 
 }
 
